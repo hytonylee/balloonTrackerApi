@@ -1,39 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const { getBalloon, getBalloons, createBalloon, updateBalloon, deleteBalloon } = require('..//controllers/ballons');
 
-router.get('/', (req, res)=> {
-  res.status(200).json({
-    success: true,
-    message: 'Show all balloons'
-  })
-});
+// Replace the following with router.route() after controllers are created
+// router.get('/', (req, res)=> {});
+// router.post('/', (req, res)=> {});
+// router.put('/:id', (req, res)=> {});
+// router.get('/:id', (req, res)=> {});
+// router.delete('/:id', (req, res)=> {});
 
-router.post('/', (req, res)=> {
-  res.status(200).json({
-    success: true,
-    message: 'Create a balloon'
-  })
-});
+router.route('/')
+  .get(getBalloons)
+  .post(createBalloon);
 
-router.put('/:id', (req, res)=> {
-  res.status(200).json({
-    success: true,
-    message: `update balloon with id: ${req.params.id}`
-  })
-});
-
-router.get('/:id', (req, res)=> {
-  res.status(200).json({
-    success: true,
-    message: `Get a balloon with id of ${req.params.id}`
-  })
-});
-
-router.delete('/:id', (req, res)=> {
-  res.status(200).json({
-    success: true,
-    message: `Delete a balloon with id of ${req.params.id}`
-  })
-});
+router.route('/:id')
+  .get(getBalloon)
+  .put(updateBalloon)
+  .delete(deleteBalloon);
 
 module.exports = router;
