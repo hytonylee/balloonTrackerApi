@@ -4,7 +4,8 @@
 exports.getBalloons = (req, res, next) => {
   res.status(200).json({
     success: true,
-    message: 'Show all balloons'
+    message: 'Show all balloons',
+    hello: req.hello
   })
 }
 
@@ -14,7 +15,7 @@ exports.getBalloons = (req, res, next) => {
 exports.getBalloon = (req, res, next) => {
   res.status(200).json({
     success: true,
-    message: `Get a balloon with id of ${req.params.id}`
+    message: `Get a balloon with id of ${req.params.id}`,
   })
 }
 
