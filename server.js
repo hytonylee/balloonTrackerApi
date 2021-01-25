@@ -1,12 +1,16 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
+const connectDB = require('./config/db');
+
+// Load env vars
+dotenv.config({ path: './config/config.env'});
+
+// Connect to Database
+connectDB();
 
 // Route files
 const balloons = require('./routes/balloons');
-
-//Load env vars
-dotenv.config({ path: './config/config.env'});
 
 const app = express();
 
@@ -15,6 +19,8 @@ if(process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
   // app.use(logger);
 }
+
+
 
 
 // Mount Router
