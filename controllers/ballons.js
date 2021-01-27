@@ -1,3 +1,5 @@
+const Balloon = require('../models/Balloon');
+
 // @desc    get all balloons
 // @route   GET /api/v1/balloons
 // @access  Public
@@ -22,11 +24,19 @@ exports.getBalloon = (req, res, next) => {
 // @desc    create a balloons
 // @route   POST /api/v1/balloons
 // @access  Private
-exports.createBalloon = (req, res, next) => {
-  res.status(200).json({
-    success: true,
-    message: 'Create a balloon'
-  })
+exports.createBalloon =  async (req, res, next) => {
+   try {
+      const balloon = await Balloon.create(req.body);
+      res.status(201).json({
+      success: true,
+      data: balloon
+    })
+   } catch (err) {
+     res.status(400).json({
+       success: false
+     })
+   }
+  
 }
 
 // @desc    update a balloon

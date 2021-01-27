@@ -4,9 +4,9 @@ const BalloonSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, 'Please have a name'],
-    unique: true,
     trim: true,
-    maxlength: [60, 'Name cannot be more than 60 characters']
+    maxlength: [60, 'Name cannot be more than 60 characters'],
+    unique: false,
   },
   color: {
     type: String,
@@ -47,3 +47,6 @@ const BalloonSchema = new mongoose.Schema({
     default: Date.now
   }
 })
+
+
+module.exports = mongoose.model('Balloon', BalloonSchema);
