@@ -4,6 +4,7 @@
     "user": "5d7a514b5d2c12c7449be045",
     "name": "Balloon One",
     "color": "red",
+    "address": "122 Walter Hardwick Ave 305 Vancouver BC V5Y 0C9",
     "log": []
   },
   {
@@ -11,6 +12,7 @@
     "user": "5d7a514b5d2c12c7449be046",
     "name": "Happy",
     "color": "green",
+    "address": "106 588 45th Ave W Vancouver BC V5Z 4S3",
     "log": []
   },
   {
@@ -18,6 +20,7 @@
     "user": "5c8a1d5b0190b214360dc031",
     "name": "Rainbow",
     "color": "yellow",
+    "address": "6837 Station Hill Dr 605 Burnaby BC V3N 5B7",
     "log": []
   },
   {
@@ -25,6 +28,7 @@
     "user": "5c8a1d5b0190b214360dc032",
     "name": "Thunder",
     "color": "orange",
+    "address": "4657 Hazel St 403 Burnaby BC V5H 4R2",
     "log": []
   }
 ]
